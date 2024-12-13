@@ -8,4 +8,8 @@
                 bar.querySelector('span').style.width = percentage + '%';
             }
         }
-   
+
+         function getVisitorCount() { return fetch('https://api.countapi.xyz/hit/seu-dominio.com/visitas') .then(response => response.json()) .then(data => data.value); } 
+         
+         function updateVisitorCounter() { getVisitorCount().then(count => { document.getElementById('counter').innerText = count; }); }
+         window.onload = updateVisitorCounter; 
