@@ -7,21 +7,23 @@
 
 body { 
     font-family: "Nova Square", sans-serif;
-    background-image: url('settings/fundo.jpg');    
+    background-color: #fff;       
 } 
 
 #visitor-counter { 
     position: fixed; top: 10px; 
     right: 10px; 
     background-color: rgba(0, 0, 0, 0.5); 
-    color: white; padding: 5px 10px; 
+    color: white; 
+    padding: 5px 10px; 
     border-radius: 5px; 
     font-size: 14px; 
     z-index: 1000; 
 }
 
 .container { 
-    background: rgb(255, 255, 255, 1);
+    position: absolute;
+    background: rgb(255, 255, 255);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
     padding: 20px; 
     margin-top: 20px; 
