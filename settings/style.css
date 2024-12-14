@@ -6,8 +6,7 @@
 }
 
 body { 
-    font-family: "Nova Square", sans-serif;
-    background-color: #fff;       
+    font-family: "Nova Square", sans-serif;       
 } 
 
 #visitor-counter { 
@@ -22,7 +21,6 @@ body {
 }
 
 .container { 
-    position: absolute;
     background: rgb(255, 255, 255);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
     padding: 20px; 
