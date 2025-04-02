@@ -1,114 +1,211 @@
-/* CSS Reset */
- * { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box;
+/* CSS Reset - Remove margens, paddings padrão e define box-model para border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho do elemento */
 }
 
-body { 
-    font-family: "Nova Square", sans-serif;       
-} 
-
-#visitor-counter { 
-    position: fixed; top: 10px; 
-    right: 10px; 
-    background-color: rgba(0, 0, 0, 0.5); 
-    color: rgb(255, 255, 255); 
-    padding: 5px 10px; 
-    border-radius: 5px; 
-    font-size: 14px; 
-    z-index: 1000; 
+/* Estilos gerais do corpo do documento */
+body {
+    font-family: "Nova Square", sans-serif; /* Define a fonte principal */
+    background-color: #f8f9fa; /* Cor de fundo cinza claro */
+    color: #212529; /* Cor do texto escuro */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
 }
 
-.container { 
-    opacity: 1;
-    background: rgb(255, 255, 255);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
-    padding: 20px; 
-    margin-top: 20px; 
-    border-radius: 10px; 
-} 
+/* Estilo do contador de visitantes (fixo no canto superior direito) */
+#visitor-counter {
+    position: fixed; /* Posicionamento fixo na tela */
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto com transparência */
+    color: #fff; /* Texto branco */
+    padding: 5px 10px;
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 14px;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
 
+/* Container principal que envolve todo o conteúdo do currículo */
+.container {
+    background: #fff; /* Fundo branco */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para efeito de elevação */
+    padding: 30px; /* Espaçamento interno */
+    margin-top: 30px; /* Margem superior */
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: all 0.3s ease-in-out; /* Transição suave para efeitos hover */
+}
+
+/* Efeito hover no container para destacar quando o mouse passa por cima */
+.container:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Sombra mais intensa */
+}
+
+/* Estilo do cabeçalho com nome e título */
 .header {
-    text-align: center; 
-    margin-bottom: 20px; 
+    text-align: center; /* Centraliza o conteúdo */
+    margin-bottom: 30px; /* Espaçamento inferior */
 }
 
+/* Container da foto de perfil */
 .photo {
-    width: 150px; 
-    height: 150px; 
-    border-radius: 50%; 
-    overflow: hidden; 
-    margin: 0 auto 20px; 
-    background-color: #ddd; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    color: #aaa; 
+    width: 150px; /* Largura fixa */
+    height: 150px; /* Altura fixa */
+    border-radius: 50%; /* Bordas totalmente arredondadas (círculo) */
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
+    margin: 0 auto 20px; /* Centraliza e adiciona margem inferior */
+    background-color: #ddd; /* Cor de fundo padrão caso a imagem não carregue */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    color: #aaa; /* Cor do texto de fallback */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-.photo img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+/* Estilo da imagem dentro do container .photo */
+.photo img {
+    width: 100%; /* Ocupa 100% do container */
+    height: 100%; /* Ocupa 100% do container */
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço mantendo proporções */
 }
 
-.section-title { 
-    font-size: 1.75em; 
-    margin-bottom: 15px; 
-    color: #007bff; 
-    border-bottom: 3px solid #007bff; 
-    padding-bottom: 5px; 
+/* Estilo dos títulos das seções */
+.section-title {
+    font-size: 1.75em; /* Tamanho da fonte */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    color: #007bff; /* Cor azul (primária) */
+    border-bottom: 3px solid #007bff; /* Linha inferior azul */
+    padding-bottom: 5px; /* Espaçamento entre texto e linha */
+    text-transform: uppercase; /* Transforma texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
 }
 
-.progress-container { 
-    display: flex; 
-    align-items: center; 
-    margin-bottom: 10px; 
+/* Container das barras de progresso (habilidades técnicas) */
+.progress-container {
+    display: flex; /* Layout flexível */
+    align-items: center; /* Alinha itens verticalmente ao centro */
+    margin-bottom: 15px; /* Espaçamento inferior */
 }
 
-.progress-container span { 
-    width: 20%; 
-    text-align: right; 
-    padding-right: 10px; 
-    font-weight: bold; 
+/* Estilo do texto ao lado das barras de progresso */
+.progress-container span {
+    width: 20%; /* Largura fixa */
+    text-align: right; /* Alinhamento à direita */
+    padding-right: 10px; /* Espaçamento interno à direita */
+    font-weight: bold; /* Texto em negrito */
+    color: #495057; /* Cor do texto */
 }
 
-.progress { 
-    width: 80%; 
-    height: 20px; 
-    margin: 0; 
+/* Barra de progresso base (fundo) */
+.progress {
+    width: 80%; /* Largura (complementa o span) */
+    height: 20px; /* Altura fixa */
+    background-color: #e9ecef; /* Cor de fundo cinza */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa */
 }
 
+/* Barra de progresso preenchida */
 .progress-bar {
-    height: 100%; 
+    height: 100%; /* Ocupa toda altura do container */
+    transition: width 0.4s ease-in-out; /* Animação suave ao alterar largura */
 }
 
-.contact-item { 
-    display: flex; 
-    align-items: center; 
+/* Itens de contato (ícone + texto) */
+.contact-item {
+    display: flex; /* Layout flexível */
+    align-items: center; /* Alinha itens verticalmente */
+    margin-bottom: 10px; /* Espaçamento inferior */
 }
 
-.contact-item i { 
-    margin-right: 10px; 
-    color: #007bff; 
+/* Ícones nos itens de contato */
+.contact-item i {
+    margin-right: 10px; /* Espaçamento à direita */
+    color: #007bff; /* Cor azul (primária) */
+    font-size: 1.2em; /* Tamanho aumentado */
 }
 
-.footer { 
-    position: relative; 
-    bottom: 0; 
-    width: 100%; 
-    background-color: #343a40; 
-    color: white; 
-    padding: 10px 0; 
-    text-align: center; 
+/* Rodapé do currículo */
+.footer {
+    position: relative; /* Posicionamento relativo */
+    bottom: 0;
+    width: 100%; /* Largura total */
+    background-color: #343a40; /* Cor de fundo escura */
+    color: white; /* Texto branco */
+    padding: 15px 0; /* Espaçamento interno vertical */
+    text-align: center; /* Texto centralizado */
+    font-size: 0.9em; /* Tamanho de fonte reduzido */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra na parte superior */
 }
 
+/* Links no rodapé */
+.footer a {
+    color: #007bff; /* Cor azul (primária) */
+    text-decoration: none; /* Remove sublinhado */
+}
 
+/* Efeito hover nos links do rodapé */
+.footer a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar mouse */
+}
+
+/* Media query para telas menores (tablets e celulares) */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Reduz padding */
+    }
+
+    .section-title {
+        font-size: 1.5em; /* Reduz tamanho da fonte */
+    }
+
+    .progress-container span {
+        font-size: 0.9em; /* Reduz tamanho da fonte */
+    }
+}
+
+/* Estilos específicos para impressão */
 @media print {
-    body { background-color: #fff; color: black; } 
-    .container { box-shadow: none; margin: 0; padding: 0; width: 100%; } 
-    .header, .footer, .section-title, .contact-item, .progress-container, .progress-bar, .photo { color: black; background-color: none; } 
-    .section-title { color: #007bff; border-bottom-color: #007bff; } 
-    .progress-bar { background-color: #007bff !important; color: white !important; } 
-    .footer { background-color: #343a40; color: white; } }
+    body {
+        background-color: #fff; /* Fundo branco */
+        color: black; /* Texto preto */
+    }
+
+    .container {
+        box-shadow: none; /* Remove sombra */
+        margin: 0; /* Remove margens */
+        padding: 0; /* Remove padding */
+        width: 100%; /* Largura total */
+    }
+
+    /* Garante legibilidade na impressão */
+    .header,
+    .footer,
+    .section-title,
+    .contact-item,
+    .progress-container,
+    .progress-bar,
+    .photo {
+        color: black; /* Texto preto */
+        background-color: none; /* Remove fundos coloridos */
+    }
+
+    /* Mantém estilo dos títulos */
+    .section-title {
+        color: #007bff;
+        border-bottom-color: #007bff;
+    }
+
+    /* Garante visibilidade das barras de progresso */
+    .progress-bar {
+        background-color: #007bff !important;
+        color: white !important;
+    }
+
+    /* Mantém estilo do rodapé */
+    .footer {
+        background-color: #343a40;
+        color: white;
+    }
+}
