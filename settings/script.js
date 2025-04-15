@@ -134,5 +134,7 @@ function updateVisitorCounter() {
     document.getElementById('counter').textContent = count;
 }
 
+
+
 // Chame a função quando a página carregar
 window.addEventListener('DOMContentLoaded', updateVisitorCounter);

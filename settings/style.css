@@ -6,11 +6,28 @@
 }
 
 /* Estilos gerais do corpo do documento */
+/* Adicione isso ao seu style.css */
 body {
-    font-family: "Nova Square", sans-serif; /* Define a fonte principal */
-    background-color: #f8f9fa; /* Cor de fundo cinza claro */
-    color: #212529; /* Cor do texto escuro */
-    line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+    background-image: url(settings/fundo.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    height: 5vh;
+    overflow-x: hidden;
+    animation: parallax 20s linear infinite;
+}
+
+@keyframes parallax {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
 }
 
 /* Estilo do contador de visitantes (fixo no canto superior direito) */
