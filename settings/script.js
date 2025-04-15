@@ -119,3 +119,20 @@ function initializePage() {
  * (incluindo imagens e stylesheets) estejam carregados
  */
 window.addEventListener('load', initializePage);
+
+// script.js - Adicione esta função
+function updateVisitorCounter() {
+    let count = localStorage.getItem('pageVisits');
+    
+    if (count === null) {
+        count = 1;
+    } else {
+        count = parseInt(count) + 1;
+    }
+    
+    localStorage.setItem('pageVisits', count);
+    document.getElementById('counter').textContent = count;
+}
+
+// Chame a função quando a página carregar
+window.addEventListener('DOMContentLoaded', updateVisitorCounter);
