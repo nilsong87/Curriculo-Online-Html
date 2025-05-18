@@ -7,10 +7,24 @@
 
 /* Estilos gerais do corpo do documento */
 body {
-    font-family: "Nova Square", sans-serif; /* Define a fonte principal */
+    font-family: 'Nova Square', Arial, sans-serif; /* Define a fonte principal */
     background-color: #f8f9fa; /* Cor de fundo cinza claro */
-    color: #212529; /* Cor do texto escuro */
+    color: #222; /* Cor do texto escuro */
     line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+
+    /* Animação de movimento contínuo do fundo */
+    background-repeat: repeat;           /* Repete apenas verticalmente */
+    background-size: auto;                /* Ajusta para cobrir a tela */
+    animation: moveBackgroundY 30s linear infinite;
+}
+
+@keyframes moveBackgroundY {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 1000px;    /* Ajuste 1000px conforme o tamanho da sua imagem */
+    }
 }
 
 /* Estilo do contador de visitantes (fixo no canto superior direito) */
@@ -72,11 +86,11 @@ body {
 
 /* Estilo dos títulos das seções */
 .section-title {
-    font-size: 1.75em; /* Tamanho da fonte */
-    margin-bottom: 20px; /* Espaçamento inferior */
+    font-size: 2rem; /* Tamanho da fonte */
+    margin-bottom: 1em; /* Espaçamento inferior */
     color: #007bff; /* Cor azul (primária) */
-    border-bottom: 3px solid #007bff; /* Linha inferior azul */
-    padding-bottom: 5px; /* Espaçamento entre texto e linha */
+    border-bottom: 2px solid #007bff22; /* Linha inferior azul */
+    padding-bottom: 0.3em; /* Espaçamento entre texto e linha */
     text-transform: uppercase; /* Transforma texto em maiúsculas */
     letter-spacing: 1px; /* Espaçamento entre letras */
 }
@@ -85,7 +99,7 @@ body {
 .progress-container {
     display: flex; /* Layout flexível */
     align-items: center; /* Alinha itens verticalmente ao centro */
-    margin-bottom: 15px; /* Espaçamento inferior */
+    margin-bottom: 1.2em; /* Espaçamento inferior */
 }
 
 /* Estilo do texto ao lado das barras de progresso */
@@ -137,6 +151,8 @@ body {
     text-align: center; /* Texto centralizado */
     font-size: 0.9em; /* Tamanho de fonte reduzido */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra na parte superior */
+    margin-top: 2em;
+    border-radius: 0 0 18px 18px;
 }
 
 /* Links no rodapé */
@@ -153,11 +169,11 @@ body {
 /* Media query para telas menores (tablets e celulares) */
 @media (max-width: 768px) {
     .container {
-        padding: 20px; /* Reduz padding */
+        padding: 0.5em !important; /* Reduz padding */
     }
 
     .section-title {
-        font-size: 1.5em; /* Reduz tamanho da fonte */
+        font-size: 1.3rem; /* Reduz tamanho da fonte */
     }
 
     .progress-container span {

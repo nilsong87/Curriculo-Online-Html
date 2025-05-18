@@ -34,14 +34,16 @@
     <!-- Título da página exibido na aba do navegador -->
 </head>
 
-<body style="background-image: url(settings/fundo.jpg); opacity: 1;">
+<body style="background-image: url(settings/36033.gif); background-size: cover; background-attachment: fixed;">
     <!-- Corpo do documento com imagem de fundo -->
 
     <!-- Contador de visitantes -->
-    <div id="visitor-counter">Visitantes: <span id="counter">0</span></div>
+    <div id="visitor-counter" class="text-right pr-3 pt-2 small text-muted">Visitantes: <span id="counter">0</span>
+    </div>
 
     <!-- Container principal do Bootstrap -->
-    <div class="container">
+    <div class="container py-4 px-2"
+        style="background: rgba(255,255,255,0.96); border-radius: 18px; box-shadow: 0 2px 16px #0001;">
         <!-- Cabeçalho com informações pessoais -->
         <header class="header text-center">
             <h1 class="display-4">Nilson Gomes</h1>
@@ -55,12 +57,10 @@
             </div>
         </header>
 
-        
-
         <!-- Seção de Informações Pessoais -->
-        <section class="section">
+        <section class="section mb-4">
             <h2 class="section-title">Informação Pessoal</h2>
-            <ul class="list-unstyled">
+            <ul class="list-unstyled mb-0">
                 <!-- Lista sem estilos padrão -->
                 <li><strong>Nome:</strong> Nilson José Silva Gomes</li>
                 <li><strong>Data Nascimento:</strong> 07/09/1987</li>
@@ -69,11 +69,8 @@
             </ul>
         </section>
 
-        <br>
-        <br>
-
         <!-- Seção de Contatos -->
-        <section class="section">
+        <section class="section mb-4">
             <h2 class="section-title">Contatos</h2>
             <ul class="list-unstyled">
                 <li><i class="fas fa-phone"></i> <strong>Telefone:</strong> (+55) 99938 5205</li>
@@ -111,11 +108,8 @@
             </ul>
         </section>
 
-        <br>
-        
-
         <!-- Seção de Competências Pessoais -->
-        <section class="section">
+        <section class="section mb-4">
             <h2 class="section-title">Competências Pessoais</h2>
             <ul class="list-unstyled">
                 <li>Responsabilidade</li>
@@ -126,11 +120,8 @@
             </ul>
         </section>
 
-        <br>
-        <br>
-
         <!-- Seção de Experiência Profissional -->
-        <section class="section">
+        <section class="section mb-4">
             <h2 class="section-title">Experiência</h2>
             <div class="info-item mb-3">
                 <strong>09.2024 - Atualidade:</strong> Programador Fullstack<br>
@@ -143,11 +134,8 @@
             </div>
         </section>
 
-        <br>
-        <br>
-
         <!-- Seção de Educação e Formação -->
-        <section class="section">
+        <section class="section mb-4">
             <h2 class="section-title">Educação e Formação</h2>
             <div class="info-item mb-3">
                 <strong>08.2024 - 12.2024:</strong> Programador FullStack - SENAC-BA<br>
@@ -164,43 +152,44 @@
                     Organizacional, Empreendedorismo e Inovação e Direito Empresarial e Legislação Tributária.</p>
             </div>            
         </section>
-        <br>
-        <br>
 
         <!-- Seção de Cursos -->
-        <section class="section">
+        <section class="section mb-4">
             <h2 class="section-title">Cursos</h2>
-            <div class="info-item mb-3">
-                <strong>2024:</strong> Noções Básicas de JavaScript 1 - Cisco<br>
-                <p>Introdução à programação com JavaScript, incluindo manipulação de DOM e lógica de programação.</p>
-            </div>
-            <div class="info-item mb-3">
-                <strong>2024:</strong> Noções Básicas de JavaScript 2 - Cisco<br>
-                <p>Conceitos avançados de JavaScript, incluindo funções, objetos e manipulação de eventos.</p>
-            </div>
-            <div class="info-item mb-3">
-                <strong>2024:</strong> Segurança de Endpoint - SENAC-BA/Casa do Comércio/Cisco<br>
-                <p>Práticas de segurança para dispositivos finais, incluindo proteção contra ameaças e gerenciamento de
-                    endpoints.</p>
-            </div>
-            <div class="info-item mb-3">
-                <strong>2024:</strong> Fundamentos do Python 1 - Cisco<br>
-                <p>Introdução à programação com Python, cobrindo sintaxe básica, estruturas de controle e manipulação de
-                    dados.</p>
-            </div>
-            <div class="info-item mb-3">
-                <strong>2024:</strong> Fundamentos do Python 2 - Cisco<br>
-                <p>Conceitos avançados de Python, incluindo funções, módulos e manipulação de arquivos.</p>
-            </div>
-            <div class="info-item mb-3">
-                <strong>2024:</strong> Introdução à Ciência de Dados - Cisco<br>
-                <p>Fundamentos de ciência de dados, incluindo coleta, análise e visualização de dados.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-item mb-3 p-3 bg-light rounded shadow-sm">
+                        <strong>2024:</strong> Noções Básicas de JavaScript 1 - Cisco<br>
+                        <p class="mb-0">Introdução à programação com JavaScript, incluindo manipulação de DOM e lógica de programação.</p>
+                    </div>
+                    <div class="info-item mb-3 p-3 bg-light rounded shadow-sm">
+                        <strong>2024:</strong> Noções Básicas de JavaScript 2 - Cisco<br>
+                        <p class="mb-0">Conceitos avançados de JavaScript, incluindo funções, objetos e manipulação de eventos.</p>
+                    </div>
+                    <div class="info-item mb-3 p-3 bg-light rounded shadow-sm">
+                        <strong>2024:</strong> Segurança de Endpoint - SENAC-BA/Casa do Comércio/Cisco<br>
+                        <p class="mb-0">Práticas de segurança para dispositivos finais, incluindo proteção contra ameaças e gerenciamento de endpoints.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-item mb-3 p-3 bg-light rounded shadow-sm">
+                        <strong>2024:</strong> Fundamentos do Python 1 - Cisco<br>
+                        <p class="mb-0">Introdução à programação com Python, cobrindo sintaxe básica, estruturas de controle e manipulação de dados.</p>
+                    </div>
+                    <div class="info-item mb-3 p-3 bg-light rounded shadow-sm">
+                        <strong>2024:</strong> Fundamentos do Python 2 - Cisco<br>
+                        <p class="mb-0">Conceitos avançados de Python, incluindo funções, módulos e manipulação de arquivos.</p>
+                    </div>
+                    <div class="info-item mb-3 p-3 bg-light rounded shadow-sm">
+                        <strong>2024:</strong> Introdução à Ciência de Dados - Cisco<br>
+                        <p class="mb-0">Fundamentos de ciência de dados, incluindo coleta, análise e visualização de dados.</p>
+                    </div>
+                </div>
             </div>
         </section>
-        <br>
-        <br>
+
         <!-- Seção de Competências Técnicas com barras de progresso -->
-        <section class="section">
+        <section class="section mb-4">
             <h2 class="section-title">Competências Técnicas</h2>
             <div class="progress-container">
                 <i class="fab fa-html5" style="color: #e34c26;"></i> <span><strong>HTML</strong></span>
@@ -246,11 +235,8 @@
             </div>
         </section>
 
-        <br>
-        <br>
-
         <!-- Seção de Idiomas -->
-        <section class="section">
+        <section class="section mb-4">
             <h2 class="section-title">Idiomas</h2>
             <div class="progress-container">
                 <i class="flag-icon flag-icon-br"></i> <span><strong>Português</strong></span>
@@ -271,9 +257,6 @@
                 </div>
             </div>
         </section>
-
-        <br>
-        <br>
 
         <!-- Rodapé -->
         <footer class="footer bg-dark text-white text-center py-3">
