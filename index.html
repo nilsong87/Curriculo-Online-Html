@@ -303,7 +303,7 @@
         // Função para buscar a contagem
         async function fetchVisitorCount() {
             try {
-                const response = await fetch('http://localhost:3000/api/visitors');
+                const response = await fetch('https://curriculo-online-html.onrender.com/api/visitors');
                 const data = await response.json();
                 counterElement.textContent = data.count;
             } catch (error) {
