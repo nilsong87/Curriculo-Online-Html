@@ -14,6 +14,14 @@ app.use((req, res, next) => {
 app.use(cors());
 app.use(express.json());
 
+// Tratar requisições OPTIONS para CORS pré-flight
+app.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.sendStatus(200);
+});
+
 // Use a pasta .data para persistência no Glitch
 const COUNTER_FILE = '.data/counter.json';
 
