@@ -38,5 +38,5 @@ app.post('/api/visitors', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`API rodando em http://localhost:${PORT}`);
+    console.log(`API rodando em https://curriculo-online-html.onrender.com:${PORT}`);
 });
