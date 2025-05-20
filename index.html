@@ -293,8 +293,11 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js" defer></script>
     <!-- VLibras para acessibilidade -->
     <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-        // Inicializa o widget de acessibilidade VLibras
+        window.addEventListener('DOMContentLoaded', function() {
+  if (window.VLibras) {
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  }
+});
     </script>
 
     <script>
