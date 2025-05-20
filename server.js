@@ -7,7 +7,8 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-const COUNTER_FILE = '/tmp/counter.json';
+// Use a pasta .data para persistência no Glitch
+const COUNTER_FILE = '.data/counter.json';
 
 function readCounter() {
     if (!fs.existsSync(COUNTER_FILE)) {
