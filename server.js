@@ -7,6 +7,20 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// CORS manual para garantir funcionamento
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+app.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.sendStatus(200);
+});
+
 // Configuração do MongoDB
 const uri = "mongodb+srv://nilsonjosesilvagomes:UiAbuNMdhSOqbLlb@cluster0.zwjhdco.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
