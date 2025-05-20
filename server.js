@@ -4,10 +4,8 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Permite qualquer origem (teste)
-app.use(cors({
-  origin: ['https://nilsong87.github.io']
-}));
+// Permite qualquer origem (CORS liberado)
+app.use(cors());
 app.use(express.json());
 
 // Use a pasta .data para persistência no Glitch
