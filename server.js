@@ -4,8 +4,9 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Permite qualquer origem (teste)
 app.use(cors({
-  origin: ['https://nilsong87.github.io', 'https://first-wealthy-rest.glitch.me']
+  origin: ['https://nilsong87.github.io']
 }));
 app.use(express.json());
 
