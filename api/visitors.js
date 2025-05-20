@@ -1,6 +1,6 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-const uri = process.env.MONGODB_URI;
+const uri = "mongodb+srv://nilsonjosesilvagomes:<db_password>@cluster0.zwjhdco.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const dbName = "contadorDB";
 const collectionName = "visitors";
 
