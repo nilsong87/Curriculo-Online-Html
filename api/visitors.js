@@ -1,6 +1,6 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-const uri = process.env.MONGODB_URI; // Use variável de ambiente na Vercel!
+const uri = process.env.MONGODB_URI;
 const dbName = "contadorDB";
 const collectionName = "visitors";
 
@@ -21,6 +21,7 @@ async function getCollection() {
 }
 
 export default async function handler(req, res) {
+    // Adicione estes headers para liberar CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
