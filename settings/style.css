@@ -5,76 +5,75 @@
     box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho do elemento */
 }
 
-/* Estilos gerais do corpo do documento */
+/* Fundo animado com efeito glass e overlay */
 body {
     font-family: 'Nova Square', Arial, sans-serif; /* Define a fonte principal */
-    background-color: #f8f9fa; /* Cor de fundo cinza claro */
+    background-color: #e3e9f0; /* Cor de fundo cinza claro */
     color: #222; /* Cor do texto escuro */
     line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
 
     /* Animação de movimento contínuo do fundo */
-    background-repeat: repeat;           /* Repete apenas verticalmente */
-    background-size: auto;                /* Ajusta para cobrir a tela */
+    background-image: url('../settings/tema.gif');
+    background-repeat: repeat;
+        
     animation: moveBackgroundY 30s linear infinite;
+    min-height: 100vh;
+    position: relative;
 }
 
-@keyframes moveBackgroundY {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 0 1000px;    /* Ajuste 1000px conforme o tamanho da sua imagem */
-    }
-}
-
-/* Estilo do contador de visitantes (fixo no canto superior direito) */
-#visitor-counter {
-    position: fixed; /* Posicionamento fixo na tela */
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto com transparência */
-    color: #fff; /* Texto branco */
-    padding: 5px 10px;
-    border-radius: 5px; /* Bordas arredondadas */
-    font-size: 14px;
-    z-index: 1000; /* Garante que fique acima de outros elementos */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-}
-
-/* Container principal que envolve todo o conteúdo do currículo */
+/* Efeito glassmorphism no container principal */
 .container {
-    background: #fff; /* Fundo branco */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para efeito de elevação */
-    padding: 30px; /* Espaçamento interno */
-    margin-top: 30px; /* Margem superior */
-    border-radius: 10px; /* Bordas arredondadas */
-    transition: all 0.3s ease-in-out; /* Transição suave para efeitos hover */
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(6px);
+    border-radius: 22px; /* Bordas arredondadas */
+    padding: 40px 24px; /* Espaçamento interno */
+    margin-top: 40px; /* Margem superior */
+    margin-bottom: 40px;
+    transition: box-shadow 0.3s; /* Transição suave para efeitos hover */
+    max-width: 900px;
 }
 
 /* Efeito hover no container para destacar quando o mouse passa por cima */
 .container:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Sombra mais intensa */
+    box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.22); /* Sombra mais intensa */
 }
 
 /* Estilo do cabeçalho com nome e título */
 .header {
     text-align: center; /* Centraliza o conteúdo */
-    margin-bottom: 30px; /* Espaçamento inferior */
+    margin-bottom: 32px; /* Espaçamento inferior */
+}
+
+.header h1 {
+    font-family: 'Nova Square', Arial, sans-serif;
+    font-size: 2.8rem;
+    color: #2e6cf6;
+    letter-spacing: 2px;
+    margin-bottom: 0.2em;
+    text-shadow: 0 2px 8px #2e6cf622;
+}
+
+.header .lead {
+    font-size: 1.3rem;
+    color: #343a40;
+    margin-bottom: 1.2em;
+    font-weight: 500;
 }
 
 /* Container da foto de perfil */
 .photo {
-    width: 150px; /* Largura fixa */
-    height: 150px; /* Altura fixa */
+    width: 140px; /* Largura fixa */
+    height: 140px; /* Altura fixa */
     border-radius: 50%; /* Bordas totalmente arredondadas (círculo) */
     overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
-    margin: 0 auto 20px; /* Centraliza e adiciona margem inferior */
-    background-color: #ddd; /* Cor de fundo padrão caso a imagem não carregue */
+    margin: 0 auto 18px; /* Centraliza e adiciona margem inferior */
+    border: 4px solid #2e6cf644;
+    box-shadow: 0 2px 16px #2e6cf622;
+    background-color: #f0f4fa; /* Cor de fundo padrão caso a imagem não carregue */
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
-    color: #aaa; /* Cor do texto de fallback */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 /* Estilo da imagem dentro do container .photo */
@@ -86,25 +85,70 @@ body {
 
 /* Estilo dos títulos das seções */
 .section-title {
-    font-size: 2rem; /* Tamanho da fonte */
-    margin-bottom: 1em; /* Espaçamento inferior */
-    color: #007bff; /* Cor azul (primária) */
-    border-bottom: 2px solid #007bff22; /* Linha inferior azul */
-    padding-bottom: 0.3em; /* Espaçamento entre texto e linha */
+    font-size: 1.4rem; /* Tamanho da fonte */
+    color: #2e6cf6; /* Cor azul (primária) */
+    border-left: 6px solid #2e6cf644; /* Linha inferior azul */
+    padding-left: 14px;
+    margin-bottom: 1.2em; /* Espaçamento inferior */
     text-transform: uppercase; /* Transforma texto em maiúsculas */
     letter-spacing: 1px; /* Espaçamento entre letras */
+    font-weight: 700;
+    background: linear-gradient(90deg, #e3e9f0 60%, #f7faff 100%);
+    border-radius: 0 12px 12px 0;
+}
+
+/* Cards de informação */
+.info-item {
+    border-left: 4px solid #2e6cf622;
+    background: #f7faff;
+    margin-bottom: 1.2em;
+    padding: 1em 1.2em;
+    border-radius: 10px;
+    box-shadow: 0 1px 8px #2e6cf610;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-height: 150px; /* Ajuste conforme necessário para seu conteúdo */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.info-item:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 4px 16px #2e6cf622;
+}
+
+/* Listas */
+ul.list-unstyled li, .info-item p {
+    font-size: 1.07em;
+    margin-bottom: 0.3em;
+}
+
+/* Links */
+a {
+    color: #2e6cf6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+a:hover {
+    color: #1741a6;
+    text-decoration: underline;
 }
 
 /* Container das barras de progresso (habilidades técnicas) */
 .progress-container {
     display: flex; /* Layout flexível */
     align-items: center; /* Alinha itens verticalmente ao centro */
-    margin-bottom: 1.2em; /* Espaçamento inferior */
+    margin-bottom: 1.1em; /* Espaçamento inferior */
+    gap: 10px;
+}
+
+.progress-container i {
+    font-size: 1.3em;
+    margin-right: 6px;
 }
 
 /* Estilo do texto ao lado das barras de progresso */
 .progress-container span {
-    width: 20%; /* Largura fixa */
+    width: 22%; /* Largura fixa */
     text-align: right; /* Alinhamento à direita */
     padding-right: 10px; /* Espaçamento interno à direita */
     font-weight: bold; /* Texto em negrito */
@@ -113,16 +157,24 @@ body {
 
 /* Barra de progresso base (fundo) */
 .progress {
-    width: 80%; /* Largura (complementa o span) */
-    height: 20px; /* Altura fixa */
+    width: 70%; /* Largura (complementa o span) */
+    height: 18px; /* Altura fixa */
     background-color: #e9ecef; /* Cor de fundo cinza */
-    border-radius: 10px; /* Bordas arredondadas */
+    border-radius: 9px; /* Bordas arredondadas */
     overflow: hidden; /* Esconde conteúdo que ultrapassa */
+    box-shadow: 0 1px 4px #2e6cf610;
 }
 
 /* Barra de progresso preenchida */
 .progress-bar {
     height: 100%; /* Ocupa toda altura do container */
+    font-size: 0.95em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #2e6cf6 60%, #4fd1c5 100%);
+    color: #fff;
     transition: width 0.4s ease-in-out; /* Animação suave ao alterar largura */
 }
 
@@ -136,7 +188,7 @@ body {
 /* Ícones nos itens de contato */
 .contact-item i {
     margin-right: 10px; /* Espaçamento à direita */
-    color: #007bff; /* Cor azul (primária) */
+    color: #2e6cf6; /* Cor azul (primária) */
     font-size: 1.2em; /* Tamanho aumentado */
 }
 
@@ -145,19 +197,19 @@ body {
     position: relative; /* Posicionamento relativo */
     bottom: 0;
     width: 100%; /* Largura total */
-    background-color: #343a40; /* Cor de fundo escura */
-    color: white; /* Texto branco */
-    padding: 15px 0; /* Espaçamento interno vertical */
+    background: #23272b;
+    color: #fff; /* Texto branco */
+    padding: 18px 0; /* Espaçamento interno vertical */
     text-align: center; /* Texto centralizado */
-    font-size: 0.9em; /* Tamanho de fonte reduzido */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra na parte superior */
+    font-size: 1em; /* Tamanho de fonte reduzido */
+    box-shadow: 0 -2px 8px #0001; /* Sombra na parte superior */
     margin-top: 2em;
-    border-radius: 0 0 18px 18px;
+    border-radius: 0 0 22px 22px;
 }
 
 /* Links no rodapé */
 .footer a {
-    color: #007bff; /* Cor azul (primária) */
+    color: #2e6cf6; /* Cor azul (primária) */
     text-decoration: none; /* Remove sublinhado */
 }
 
@@ -166,18 +218,55 @@ body {
     text-decoration: underline; /* Adiciona sublinhado ao passar mouse */
 }
 
+/* Contador de visitantes (fixo no canto superior direito) */
+#visitor-counter {
+    position: fixed; /* Posicionamento fixo na tela */
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.85); /* Fundo preto com transparência */
+    color: #2e6cf6; /* Texto branco */
+    padding: 7px 14px;
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 15px;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    box-shadow: 0 2px 8px rgba(0, 81, 255, 0.15); /* Sombra sutil */
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
 /* Media query para telas menores (tablets e celulares) */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .container {
-        padding: 0.5em !important; /* Reduz padding */
+        padding: 1em !important;
+        margin-top: 18px;
+        margin-bottom: 18px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
     }
 
     .section-title {
-        font-size: 1.3rem; /* Reduz tamanho da fonte */
+        font-size: 1.1rem; /* Reduz tamanho da fonte */
     }
 
     .progress-container span {
         font-size: 0.9em; /* Reduz tamanho da fonte */
+    }
+
+    .photo {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* Animação do fundo */
+@keyframes moveBackgroundY {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 400px;    /* Mesmo valor do background-size height */
     }
 }
 
@@ -209,13 +298,13 @@ body {
 
     /* Mantém estilo dos títulos */
     .section-title {
-        color: #007bff;
-        border-bottom-color: #007bff;
+        color: #2e6cf6;
+        border-bottom-color: #2e6cf6;
     }
 
     /* Garante visibilidade das barras de progresso */
     .progress-bar {
-        background-color: #007bff !important;
+        background-color: #2e6cf6 !important;
         color: white !important;
     }
 
