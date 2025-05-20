@@ -1,52 +1,55 @@
 const express = require('express');
 const cors = require('cors');
-const fs = require('fs');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Força CORS para qualquer origem e métodos
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
 app.use(cors());
 app.use(express.json());
 
-// Tratar requisições OPTIONS para CORS pré-flight
-app.options('*', (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  res.sendStatus(200);
-});
+// Configuração do MongoDB
+const uri = "mongodb+srv://nilsonjosesilvagomes:UiAbuNMdhSOqbLlb@cluster0.zwjhdco.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
+const dbName = "contadorDB";
+const collectionName = "visitors";
 
-// Use a pasta .data para persistência no Glitch
-const COUNTER_FILE = '.data/counter.json';
-
-function readCounter() {
-    if (!fs.existsSync(COUNTER_FILE)) {
-        fs.writeFileSync(COUNTER_FILE, JSON.stringify({ count: 0 }));
+// Função para conectar e garantir o documento do contador
+async function getCollection() {
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = db.collection(collectionName);
+    // Garante que existe um documento para o contador
+    const doc = await collection.findOne({});
+    if (!doc) {
+        await collection.insertOne({ count: 0 });
     }
-    const data = fs.readFileSync(COUNTER_FILE);
-    return JSON.parse(data).count;
+    return collection;
 }
 
-function saveCounter(count) {
-    fs.writeFileSync(COUNTER_FILE, JSON.stringify({ count }));
-}
-
-app.get('/api/visitors', (req, res) => {
-    const count = readCounter();
-    res.json({ count });
+// GET: retorna o contador
+app.get('/api/visitors', async (req, res) => {
+    try {
+        const collection = await getCollection();
+        const doc = await collection.findOne({});
+        res.json({ count: doc.count });
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao buscar contador' });
+    }
 });
 
-app.post('/api/visitors', (req, res) => {
-    let count = readCounter();
-    count += 1;
-    saveCounter(count);
-    res.json({ count });
+// POST: incrementa o contador
+app.post('/api/visitors', async (req, res) => {
+    try {
+        const collection = await getCollection();
+        const doc = await collection.findOneAndUpdate(
+            {},
+            { $inc: { count: 1 } },
+            { returnDocument: 'after' }
+        );
+        res.json({ count: doc.value.count });
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao incrementar contador' });
+    }
 });
 
 app.listen(PORT, () => {
