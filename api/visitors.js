@@ -1,27 +1,6 @@
-const { MongoClient, ServerApiVersion } = require('mongodb');
-
-const uri = process.env.MONGODB_URI;
-const dbName = "contadorDB";
-const collectionName = "visitors";
-
-let cachedClient = null;
-
-async function getCollection() {
-    if (!cachedClient) {
-        cachedClient = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
-        await cachedClient.connect();
-    }
-    const db = cachedClient.db(dbName);
-    const collection = db.collection(collectionName);
-    const doc = await collection.findOne({});
-    if (!doc) {
-        await collection.insertOne({ count: 0 });
-    }
-    return collection;
-}
+import { kv } from '@vercel/kv';
 
 export default async function handler(req, res) {
-    // Adicione estes headers para liberar CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -31,24 +10,18 @@ export default async function handler(req, res) {
     }
 
     try {
-        const collection = await getCollection();
-
         if (req.method === 'GET') {
-            const doc = await collection.findOne({});
-            return res.status(200).json({ count: doc.count });
+            const count = await kv.get('visitors_count') || 0;
+            return res.status(200).json({ count });
         }
 
         if (req.method === 'POST') {
-            const doc = await collection.findOneAndUpdate(
-                {},
-                { $inc: { count: 1 } },
-                { returnDocument: 'after' }
-            );
-            return res.status(200).json({ count: doc.value.count });
+            const count = await kv.incr('visitors_count');
+            return res.status(200).json({ count });
         }
 
         res.status(405).json({ error: 'Método não permitido' });
     } catch (error) {
-        res.status(500).json({ error: 'Erro no servidor' });
+        res.status(500).json({ error: 'Erro no servidor', details: error.message });
     }
 }
