@@ -116,6 +116,74 @@ body {
     box-shadow: 0 4px 16px #2e6cf622;
 }
 
+/* Grid para os cursos */
+.cursos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* ou center, se preferir centralizado */
+    margin-bottom: 2em;
+}
+
+/* Cards de cursos com tamanho fixo e responsivo */
+.curso-card {
+    flex: 1 1 270px; /* Cresce, encolhe, largura mínima */
+    max-width: 320px;
+    min-width: 220px;
+    box-sizing: border-box;
+    height: 170px; /* Altura fixa para todos os cards */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background: #f7faff;
+    border-left: 5px solid #2e6cf6;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px #2e6cf610;
+    padding: 1em 1.2em;
+    margin-bottom: 0; /* O espaçamento agora é controlado pelo gap do grid */
+    transition: transform 0.18s, box-shadow 0.18s;
+    position: relative;
+}
+
+.curso-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 18px #2e6cf622;
+}
+
+.curso-card .curso-icone {
+    font-size: 1.7em;
+    color: #2e6cf6;
+    margin-right: 10px;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.curso-card .curso-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.curso-card .curso-titulo {
+    font-weight: 700;
+    color: #2e6cf6;
+    font-size: 1.1em;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.curso-card .curso-descricao {
+    font-size: 1em;
+    color: #343a40;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita a 3 linhas */
+    -webkit-box-orient: vertical;
+}
+
 /* Listas */
 ul.list-unstyled li, .info-item p {
     font-size: 1.07em;
@@ -296,6 +364,7 @@ a:hover {
     pointer-events: none;
 }
 
+
 /* Media query para telas menores (tablets e celulares) */
 @media (max-width: 900px) {
     .container {
@@ -319,6 +388,20 @@ a:hover {
     .photo {
         width: 90px;
         height: 90px;
+    }
+}
+
+/* Responsividade para cursos */
+@media (max-width: 700px) {
+    .cursos-grid {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .curso-card {
+        max-width: 100%;
+        min-width: 0;
+        width: 100%;
+        height: auto;
     }
 }
 
