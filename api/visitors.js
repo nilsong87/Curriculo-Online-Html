@@ -71,3 +71,35 @@ app.post('/api/visitors', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`API rodando em http://localhost:${PORT}`);
 });
+
+export default async function handler(req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
+    try {
+        const collection = await getCollection();
+
+        if (req.method === 'GET') {
+            const doc = await collection.findOne({});
+            return res.status(200).json({ count: doc.count });
+        }
+
+        if (req.method === 'POST') {
+            const doc = await collection.findOneAndUpdate(
+                {},
+                { $inc: { count: 1 } },
+                { returnDocument: 'after' }
+            );
+            return res.status(200).json({ count: doc.value.count });
+        }
+
+        res.status(405).json({ error: 'Método não permitido' });
+    } catch (error) {
+        res.status(500).json({ error: 'Erro no servidor', details: error.message });
+    }
+}
