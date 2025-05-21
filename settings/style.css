@@ -1,50 +1,49 @@
-/* CSS Reset - Remove margens, paddings padrão e define box-model para border-box */
+/* =========================
+   RESET E BASE
+========================= */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho do elemento */
+    box-sizing: border-box;
 }
 
-/* Fundo animado com efeito glass e overlay */
 body {
-    font-family: 'Nova Square', Arial, sans-serif; /* Define a fonte principal */
-    background-color: #e3e9f0; /* Cor de fundo cinza claro */
-    color: #222; /* Cor do texto escuro */
-    line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
-
-    /* Animação de movimento contínuo do fundo */
+    font-family: 'Nova Square', Arial, sans-serif;
+    background-color: #e3e9f0;
+    color: #222;
+    line-height: 1.6;
     background-image: url('../settings/tema.gif');
     background-repeat: repeat;
-        
     animation: moveBackgroundY 30s linear infinite;
     min-height: 100vh;
     position: relative;
 }
 
-/* Efeito glassmorphism no container principal */
+/* =========================
+   ESTRUTURA PRINCIPAL
+========================= */
 .container {
     background: rgba(255,255,255,0.85);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
     backdrop-filter: blur(6px);
-    border-radius: 22px; /* Bordas arredondadas */
-    padding: 40px 24px; /* Espaçamento interno */
-    margin-top: 40px; /* Margem superior */
+    border-radius: 22px;
+    padding: 40px 24px;
+    margin-top: 40px;
     margin-bottom: 40px;
-    transition: box-shadow 0.3s; /* Transição suave para efeitos hover */
+    transition: box-shadow 0.3s;
     max-width: 900px;
 }
-
-/* Efeito hover no container para destacar quando o mouse passa por cima */
 .container:hover {
-    box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.22); /* Sombra mais intensa */
+    box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.22);
 }
 
-/* Estilo do cabeçalho com nome e título */
+/* =========================
+   CABEÇALHO
+========================= */
 .header {
-    text-align: center; /* Centraliza o conteúdo */
-    margin-bottom: 32px; /* Espaçamento inferior */
+    text-align: center;
+    margin-bottom: 32px;
 }
-
 .header h1 {
     font-family: 'Nova Square', Arial, sans-serif;
     font-size: 2.8rem;
@@ -53,7 +52,6 @@ body {
     margin-bottom: 0.2em;
     text-shadow: 0 2px 8px #2e6cf622;
 }
-
 .header .lead {
     font-size: 1.3rem;
     color: #343a40;
@@ -61,43 +59,47 @@ body {
     font-weight: 500;
 }
 
-/* Container da foto de perfil */
+/* =========================
+   FOTO DE PERFIL
+========================= */
 .photo {
-    width: 140px; /* Largura fixa */
-    height: 140px; /* Altura fixa */
-    border-radius: 50%; /* Bordas totalmente arredondadas (círculo) */
-    overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
-    margin: 0 auto 18px; /* Centraliza e adiciona margem inferior */
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 18px;
     border: 4px solid #2e6cf644;
     box-shadow: 0 2px 16px #2e6cf622;
-    background-color: #f0f4fa; /* Cor de fundo padrão caso a imagem não carregue */
+    background-color: #f0f4fa;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    justify-content: center;
+    align-items: center;
 }
-
-/* Estilo da imagem dentro do container .photo */
 .photo img {
-    width: 100%; /* Ocupa 100% do container */
-    height: 100%; /* Ocupa 100% do container */
-    object-fit: cover; /* Garante que a imagem cubra todo o espaço mantendo proporções */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Estilo dos títulos das seções */
+/* =========================
+   TÍTULOS DE SEÇÃO
+========================= */
 .section-title {
-    font-size: 1.4rem; /* Tamanho da fonte */
-    color: #2e6cf6; /* Cor azul (primária) */
-    border-left: 6px solid #2e6cf644; /* Linha inferior azul */
+    font-size: 1.4rem;
+    color: #2e6cf6;
+    border-left: 6px solid #2e6cf644;
     padding-left: 14px;
-    margin-bottom: 1.2em; /* Espaçamento inferior */
-    text-transform: uppercase; /* Transforma texto em maiúsculas */
-    letter-spacing: 1px; /* Espaçamento entre letras */
+    margin-bottom: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     font-weight: 700;
     background: linear-gradient(90deg, #e3e9f0 60%, #f7faff 100%);
     border-radius: 0 12px 12px 0;
 }
 
-/* Cards de informação */
+/* =========================
+   ITENS DE INFORMAÇÃO
+========================= */
 .info-item {
     border-left: 4px solid #2e6cf622;
     background: #f7faff;
@@ -106,7 +108,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 1px 8px #2e6cf610;
     transition: transform 0.2s, box-shadow 0.2s;
-    min-height: 150px; /* Ajuste conforme necessário para seu conteúdo */
+    min-height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -116,22 +118,22 @@ body {
     box-shadow: 0 4px 16px #2e6cf622;
 }
 
-/* Grid para os cursos */
+/* =========================
+   CURSOS (GRID E CARD)
+========================= */
 .cursos-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: flex-start; /* ou center, se preferir centralizado */
+    justify-content: flex-start;
     margin-bottom: 2em;
 }
-
-/* Cards de cursos com tamanho fixo e responsivo */
 .curso-card {
-    flex: 1 1 270px; /* Cresce, encolhe, largura mínima */
+    flex: 1 1 270px;
     max-width: 320px;
     min-width: 220px;
     box-sizing: border-box;
-    height: 170px; /* Altura fixa para todos os cards */
+    height: 170px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -140,16 +142,14 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 12px #2e6cf610;
     padding: 1em 1.2em;
-    margin-bottom: 0; /* O espaçamento agora é controlado pelo gap do grid */
+    margin-bottom: 0;
     transition: transform 0.18s, box-shadow 0.18s;
     position: relative;
 }
-
 .curso-card:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 6px 18px #2e6cf622;
 }
-
 .curso-card .curso-icone {
     font-size: 1.7em;
     color: #2e6cf6;
@@ -157,12 +157,10 @@ body {
     flex-shrink: 0;
     margin-top: 4px;
 }
-
 .curso-card .curso-info {
     flex: 1;
     overflow: hidden;
 }
-
 .curso-card .curso-titulo {
     font-weight: 700;
     color: #2e6cf6;
@@ -172,7 +170,6 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .curso-card .curso-descricao {
     font-size: 1em;
     color: #343a40;
@@ -180,17 +177,17 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limita a 3 linhas */
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 
-/* Listas */
+/* =========================
+   LISTAS E LINKS
+========================= */
 ul.list-unstyled li, .info-item p {
     font-size: 1.07em;
     margin-bottom: 0.3em;
 }
-
-/* Links */
 a {
     color: #2e6cf6;
     text-decoration: none;
@@ -201,47 +198,42 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Container das barras de progresso (habilidades técnicas) */
+/* =========================
+   COMPETÊNCIAS TÉCNICAS (PROGRESS)
+========================= */
 .progress-container {
-    display: flex; /* Layout flexível */
-    align-items: center; /* Alinha itens verticalmente ao centro */
-    gap: 12px;                /* Espaço entre ícone/texto e barra */
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 1.1em;
-    min-height: 44px;         /* Garante altura mínima para alinhamento */
+    min-height: 44px;
 }
-
 .progress-container i,
 .progress-container span {
-    min-width: 32px;          /* Garante largura mínima para ícones */
+    min-width: 32px;
     font-size: 1.3em;
     display: flex;
     align-items: center;
 }
-
-/* Estilo do texto ao lado das barras de progresso */
 .progress-container span {
-    width: 22%; /* Largura fixa */
-    text-align: right; /* Alinhamento à direita */
-    padding-right: 10px; /* Espaçamento interno à direita */
-    font-weight: bold; /* Texto em negrito */
-    color: #495057; /* Cor do texto */
+    width: 22%;
+    text-align: right;
+    padding-right: 10px;
+    font-weight: bold;
+    color: #495057;
 }
-
-/* Barra de progresso base (fundo) */
 .progress {
-    width: 70%; /* Largura (complementa o span) */
-    height: 18px; /* Altura fixa */
-    background-color: #e9ecef; /* Cor de fundo cinza */
-    border-radius: 9px; /* Bordas arredondadas */
-    overflow: hidden; /* Esconde conteúdo que ultrapassa */
+    width: 70%;
+    height: 18px;
+    background-color: #e9ecef;
+    border-radius: 9px;
+    overflow: hidden;
     box-shadow: 0 1px 4px #2e6cf610;
-    flex: 1;                  /* Ocupa todo o espaço restante */
-    margin-bottom: 0;         /* Remove margem padrão do Bootstrap */
+    flex: 1;
+    margin-bottom: 0;
 }
-
-/* Barra de progresso preenchida */
 .progress-bar {
-    height: 100%; /* Ocupa toda altura do container */
+    height: 100%;
     font-size: 0.95em;
     font-weight: 600;
     display: flex;
@@ -249,66 +241,131 @@ a:hover {
     justify-content: center;
     background: linear-gradient(90deg, #2e6cf6 60%, #4fd1c5 100%);
     color: #fff;
-    transition: width 0.4s ease-in-out; /* Animação suave ao alterar largura */
+    transition: width 0.4s ease-in-out;
 }
 
-/* Itens de contato (ícone + texto) */
+/* =========================
+   CONTATO
+========================= */
 .contact-item {
-    display: flex; /* Layout flexível */
-    align-items: center; /* Alinha itens verticalmente */
-    margin-bottom: 10px; /* Espaçamento inferior */
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
-
-/* Ícones nos itens de contato */
 .contact-item i {
-    margin-right: 10px; /* Espaçamento à direita */
-    color: #2e6cf6; /* Cor azul (primária) */
-    font-size: 1.2em; /* Tamanho aumentado */
+    margin-right: 10px;
+    color: #2e6cf6;
+    font-size: 1.2em;
 }
 
-/* Rodapé do currículo */
+/* =========================
+   RODAPÉ
+========================= */
 .footer {
-    position: relative; /* Posicionamento relativo */
+    position: relative;
     bottom: 0;
-    width: 100%; /* Largura total */
+    width: 100%;
     background: #23272b;
-    color: #fff; /* Texto branco */
-    padding: 18px 0; /* Espaçamento interno vertical */
-    text-align: center; /* Texto centralizado */
-    font-size: 1em; /* Tamanho de fonte reduzido */
-    box-shadow: 0 -2px 8px #0001; /* Sombra na parte superior */
+    color: #fff;
+    padding: 18px 0;
+    text-align: center;
+    font-size: 1em;
+    box-shadow: 0 -2px 8px #0001;
     margin-top: 2em;
     border-radius: 0 0 22px 22px;
 }
-
-/* Links no rodapé */
 .footer a {
-    color: #2e6cf6; /* Cor azul (primária) */
-    text-decoration: none; /* Remove sublinhado */
+    color: #2e6cf6;
+    text-decoration: none;
 }
-
-/* Efeito hover nos links do rodapé */
 .footer a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar mouse */
+    text-decoration: underline;
 }
 
-/* Contador de visitantes (fixo no canto superior direito) */
+/* =========================
+   CONTADOR DE VISITANTES
+========================= */
 #visitor-counter {
-    position: fixed; /* Posicionamento fixo na tela */
-    top: 10px;
-    right: 10px;
-    background-color: rgba(255, 255, 255, 0.85); /* Fundo preto com transparência */
-    color: #2e6cf6; /* Texto branco */
-    padding: 7px 14px;
-    border-radius: 8px; /* Bordas arredondadas */
-    font-size: 15px;
-    z-index: 1000; /* Garante que fique acima de outros elementos */
-    box-shadow: 0 2px 8px rgba(0, 81, 255, 0.15); /* Sombra sutil */
-    font-weight: 500;
+    position: fixed;
+    top: 20px;
+    right: 16px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #2e6cf6;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 1em;
+    z-index: 1200;
+    box-shadow: 0 2px 8px rgba(0, 81, 255, 0.15);
+    font-weight: 600;
     letter-spacing: 1px;
+    height: 44px;
+    display: flex;
+    align-items: center;
 }
 
-/* Loader de carregamento */
+/* =========================
+   ACESSIBILIDADE
+========================= */
+#acessibilidade-bar {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1200;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0;
+    background: rgba(255,255,255,0.95);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px #2e6cf610;
+    padding: 8px 16px;
+    height: 44px;
+}
+#acessibilidade-bar button {
+    background: #fff;
+    color: #2e6cf6;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 16px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+    outline: none;
+    box-shadow: 0 2px 8px #2e6cf610;
+}
+#acessibilidade-bar button:hover,
+#acessibilidade-bar button:focus {
+    background: #fff;
+    color: #1741a6;
+    transform: translateY(-2px) scale(1.04);
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+.alto-contraste #acessibilidade-bar button {
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+.alto-contraste #acessibilidade-bar button:hover,
+.alto-contraste #acessibilidade-bar button:focus {
+    background: #ffd600;
+    color: #000;
+    border-color: #ffd600;
+}
+
+/* =========================
+   VLibras Widget
+========================= */
+.vw-plugin-wrapper {
+    border: 3px solid #fff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 24px rgb(255, 255, 255) !important;
+}
+
+/* =========================
+   LOADER
+========================= */
 #loader {
     position: fixed;
     z-index: 2000;
@@ -321,14 +378,12 @@ a:hover {
     justify-content: center;
     transition: opacity 0.5s;
 }
-
 .loader-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 18px;
 }
-
 .dot {
     display: inline-block;
     width: 18px;
@@ -338,19 +393,12 @@ a:hover {
     border-radius: 50%;
     animation: bounce 1.2s infinite ease-in-out;
 }
-
-.dot:nth-child(2) {
-    animation-delay: 0.2s;
-}
-.dot:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
 @keyframes bounce {
     0%, 80%, 100% { transform: scale(0.8);}
     40% { transform: scale(1.3);}
 }
-
 .loader-text {
     color: #fff;
     font-family: 'Nova Square', Arial, sans-serif;
@@ -359,45 +407,29 @@ a:hover {
     margin-top: 12px;
     animation: fadeText 1.8s infinite;
 }
-
 @keyframes fadeText {
     0%, 100% { opacity: 0.7;}
     50% { opacity: 1;}
 }
-
 #loader.fade-out {
     opacity: 0;
     pointer-events: none;
 }
 
-
-/* Media query para telas menores (tablets e celulares) */
+/* =========================
+   RESPONSIVIDADE
+========================= */
 @media (max-width: 900px) {
     .container {
         padding: 1em !important;
         margin-top: 18px;
         margin-bottom: 18px;
     }
-
-    .header h1 {
-        font-size: 2rem;
-    }
-
-    .section-title {
-        font-size: 1.1rem; /* Reduz tamanho da fonte */
-    }
-
-    .progress-container span {
-        font-size: 0.9em; /* Reduz tamanho da fonte */
-    }
-
-    .photo {
-        width: 90px;
-        height: 90px;
-    }
+    .header h1 { font-size: 2rem; }
+    .section-title { font-size: 1.1rem; }
+    .progress-container span { font-size: 0.9em; }
+    .photo { width: 90px; height: 90px; }
 }
-
-/* Responsividade para cursos */
 @media (max-width: 700px) {
     .cursos-grid {
         flex-direction: column;
@@ -409,33 +441,33 @@ a:hover {
         width: 100%;
         height: auto;
     }
+    .container {
+        padding-top: 80px !important;
+    }
 }
 
-/* Animação do fundo */
+/* =========================
+   ANIMAÇÃO DE FUNDO
+========================= */
 @keyframes moveBackgroundY {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 0 400px;    /* Mesmo valor do background-size height */
-    }
+    0% { background-position: 0 0; }
+    100% { background-position: 0 400px; }
 }
 
-/* Estilos específicos para impressão */
+/* =========================
+   IMPRESSÃO
+========================= */
 @media print {
     body {
-        background-color: #fff; /* Fundo branco */
-        color: black; /* Texto preto */
+        background-color: #fff;
+        color: black;
     }
-
     .container {
-        box-shadow: none; /* Remove sombra */
-        margin: 0; /* Remove margens */
-        padding: 0; /* Remove padding */
-        width: 100%; /* Largura total */
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
     }
-
-    /* Garante legibilidade na impressão */
     .header,
     .footer,
     .section-title,
@@ -443,40 +475,36 @@ a:hover {
     .progress-container,
     .progress-bar,
     .photo {
-        color: black; /* Texto preto */
-        background-color: none; /* Remove fundos coloridos */
+        color: black;
+        background-color: none;
     }
-
-    /* Mantém estilo dos títulos */
     .section-title {
         color: #2e6cf6;
         border-bottom-color: #2e6cf6;
     }
-
-    /* Garante visibilidade das barras de progresso */
     .progress-bar {
         background-color: #2e6cf6 !important;
         color: white !important;
     }
-
-    /* Mantém estilo do rodapé */
     .footer {
         background-color: #343a40;
         color: white;
     }
 }
 
-/* Estilos de alto contraste */
+/* =========================
+   ALTO CONTRASTE
+========================= */
 .alto-contraste {
-  background: #000 !important;
-  color: #2e6cf6 !important;
+    background: #000 !important;
+    color: #2e6cf6 !important;
 }
 .alto-contraste a,
 .alto-contraste .progress-bar,
 .alto-contraste .bg-dark {
-  color: #2e6cf6 !important;
-  background: #000 !important;
-  border-color: #2e6cf6 !important;
+    color: #2e6cf6 !important;
+    background: #000 !important;
+    border-color: #2e6cf6 !important;
 }
 #acessibilidade-bar button:focus {
     outline: 2px solid #fff;
@@ -484,11 +512,19 @@ a:hover {
 }
 
 #acessibilidade-bar {
+    position: fixed;
+    top: 20px;
+    left: 16px;
+    z-index: 1200;
     display: flex;
     gap: 10px;
     align-items: center;
-    margin-bottom: 18px;
-    margin-top: 10px;
+    margin: 0;
+    background: rgba(255,255,255,0.95);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px #2e6cf610;
+    padding: 8px 16px;
+    height: 44px; /* Altura igual ao contador */
 }
 
 #acessibilidade-bar button {
