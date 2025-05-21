@@ -465,3 +465,71 @@ a:hover {
         color: white;
     }
 }
+
+/* Estilos de alto contraste */
+.alto-contraste {
+  background: #000 !important;
+  color: #2e6cf6 !important;
+}
+.alto-contraste a,
+.alto-contraste .progress-bar,
+.alto-contraste .bg-dark {
+  color: #2e6cf6 !important;
+  background: #000 !important;
+  border-color: #2e6cf6 !important;
+}
+#acessibilidade-bar button:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+#acessibilidade-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 18px;
+    margin-top: 10px;
+}
+
+#acessibilidade-bar button {
+    background: #fff;
+    color: #2e6cf6;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 16px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+    outline: none;
+    box-shadow: 0 2px 8px #2e6cf610;
+}
+
+#acessibilidade-bar button:hover,
+#acessibilidade-bar button:focus {
+    background: #fff;
+    color: #1741a6;
+    transform: translateY(-2px) scale(1.04);
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+.alto-contraste #acessibilidade-bar button {
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.alto-contraste #acessibilidade-bar button:hover,
+.alto-contraste #acessibilidade-bar button:focus {
+    background: #ffd600;
+    color: #000;
+    border-color: #ffd600;
+}
+
+/* Destaca o widget VLibras com borda branca */
+.vw-plugin-wrapper {
+    border: 3px solid #fff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 24px rgb(255, 255, 255) !important;
+}

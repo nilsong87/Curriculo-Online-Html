@@ -35,8 +35,6 @@
 </head>
 
 <body>
-    <!-- Corpo do documento com imagem de fundo -->
-
     <!-- Contador de visitantes -->
     <div id="visitor-counter" class="text-right pr-3 pt-2 small text-muted">Visitantes: <span id="counter">0</span>
     </div>
@@ -359,6 +357,12 @@
     </div>
     <!-- Fim do container principal -->
 
+    <!-- Acessibilidade -->
+    <div id="acessibilidade-bar" style="display:flex;gap:10px;align-items:center;margin-bottom:10px;">
+        <button onclick="toggleContraste()" aria-label="Ativar/desativar alto contraste" tabindex="0">Alto Contraste</button>
+        <button onclick="alterarFonte(1)" aria-label="Aumentar fonte" tabindex="0">A+</button>
+        <button onclick="alterarFonte(-1)" aria-label="Diminuir fonte" tabindex="0">A-</button>
+    </div>
 
     <!-- Scripts JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -394,10 +398,32 @@
         // Loader
         window.addEventListener("load", function () {
             const loader = document.getElementById("loader");
-            loader.classList.add("fade-out");
-            setTimeout(() => loader.style.display = "none", 600);
+            if (loader) {
+                loader.classList.add("fade-out");
+                setTimeout(() => loader.style.display = "none", 600);
+            }
         });
-    </script>
-</body>
 
+        // Acessibilidade: Alto contraste e fonte
+        function toggleContraste() {
+            document.body.classList.toggle('alto-contraste');
+        }
+        function alterarFonte(delta) {
+            const html = document.documentElement;
+            let size = parseInt(window.getComputedStyle(html).fontSize);
+            size = Math.max(12, Math.min(24, size + delta));
+            html.style.fontSize = size + "px";
+        }
+    </script>
+     <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
 </html>
