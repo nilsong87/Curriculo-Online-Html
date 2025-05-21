@@ -205,13 +205,17 @@ a:hover {
 .progress-container {
     display: flex; /* Layout flexível */
     align-items: center; /* Alinha itens verticalmente ao centro */
-    margin-bottom: 1.1em; /* Espaçamento inferior */
-    gap: 10px;
+    gap: 12px;                /* Espaço entre ícone/texto e barra */
+    margin-bottom: 1.1em;
+    min-height: 44px;         /* Garante altura mínima para alinhamento */
 }
 
-.progress-container i {
+.progress-container i,
+.progress-container span {
+    min-width: 32px;          /* Garante largura mínima para ícones */
     font-size: 1.3em;
-    margin-right: 6px;
+    display: flex;
+    align-items: center;
 }
 
 /* Estilo do texto ao lado das barras de progresso */
@@ -231,6 +235,8 @@ a:hover {
     border-radius: 9px; /* Bordas arredondadas */
     overflow: hidden; /* Esconde conteúdo que ultrapassa */
     box-shadow: 0 1px 4px #2e6cf610;
+    flex: 1;                  /* Ocupa todo o espaço restante */
+    margin-bottom: 0;         /* Remove margem padrão do Bootstrap */
 }
 
 /* Barra de progresso preenchida */
