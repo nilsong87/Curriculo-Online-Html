@@ -1,6 +1,7 @@
-const express = require('express');
-const cors = require('cors');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+import express from 'express';
+import cors from 'cors';
+import { MongoClient, ServerApiVersion } from 'mongodb';
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -22,16 +23,18 @@ app.options('*', (req, res) => {
   res.sendStatus(200);
 });
 
-// Configuração do MongoDB
-const uri = "mongodb+srv://nilsonjosesilvagomes:UiAbuNMdhSOqbLlb@cluster0.zwjhdco.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
+const uri = process.env.MONGODB_URI; // Defina essa variável no painel da Vercel!
 const dbName = "contadorDB";
 const collectionName = "visitors";
 
-// Função para conectar e garantir o documento do contador
+let cachedClient = null;
+
 async function getCollection() {
-    await client.connect();
-    const db = client.db(dbName);
+    if (!cachedClient) {
+        cachedClient = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
+        await cachedClient.connect();
+    }
+    const db = cachedClient.db(dbName);
     const collection = db.collection(collectionName);
     // Garante que existe um documento para o contador
     const doc = await collection.findOne({});
@@ -41,7 +44,6 @@ async function getCollection() {
     return collection;
 }
 
-// GET: retorna o contador
 app.get('/api/visitors', async (req, res) => {
     try {
         const collection = await getCollection();
@@ -52,7 +54,6 @@ app.get('/api/visitors', async (req, res) => {
     }
 });
 
-// POST: incrementa o contador
 app.post('/api/visitors', async (req, res) => {
     try {
         const collection = await getCollection();
