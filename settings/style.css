@@ -9,19 +9,19 @@
 
 body {
     font-family: 'Nova Square', Arial, sans-serif;
-    background-color: #e3e9f0; /* Cor de fallback */
+    background-color: #e3e9f0;
     color: #222;
     line-height: 1.6;
-    /* Background Image */
+    
+    /* Background Image - Solução para imagens pequenas */
     background-image: url('../settings/tema.gif');
     background-repeat: repeat;
-    background-size: cover; /* Cobrir toda a área sem distorcer */
+    background-size: 500px 281px; /* Mantém o tamanho original dos tiles */
     background-position: center;
-    background-attachment: fixed; /* Fixa o fundo durante scroll (opcional) */
-    animation: moveBackgroundY 20s linear infinite;
+    animation: moveBackgroundY 30s linear infinite;
     min-height: 100vh;
     position: relative;
-    margin: 0; /* Remove margens padrão */
+    margin: 0;
 }
 
 /* =========================
