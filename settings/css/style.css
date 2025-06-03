@@ -648,8 +648,8 @@ a:hover {
     right: 16px;
     background-color: rgba(255, 255, 255, 0.95);
     color: #2e6cf6;
-    padding: 8px 16px;
-    border-radius: 8px;
+    padding: 3px 8px;
+    border-radius: 2px;
     font-size: 1em;
     z-index: 1200;
     box-shadow: 0 2px 8px rgba(0, 81, 255, 0.15);
@@ -676,7 +676,7 @@ a:hover {
     border-radius: 8px;
     box-shadow: 0 2px 12px #2e6cf610;
     padding: 8px 16px;
-    height: 44px;
+    height: 40px;
 }
 #acessibilidade-bar button {
     background: #fff;
@@ -889,7 +889,7 @@ a:hover {
     color: #2e6cf6;
     border: none;
     border-radius: 6px;
-    padding: 7px 16px;
+    padding: 3px 8px;
     font-size: 1em;
     font-weight: 600;
     cursor: pointer;
@@ -927,3 +927,166 @@ a:hover {
     box-shadow: 0 4px 24px rgb(255, 255, 255) !important;
 }
 
+
+
+
+
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Dispositivos médios (tablets, 768px e acima) */
+@media (max-width: 991.98px) {
+    .container {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 30px 20px;
+    }
+    
+    .header h1 {
+        font-size: 2.4rem;
+    }
+    
+    .header .lead {
+        font-size: 1.1rem;
+    }
+    
+    .curso-card {
+        flex: 1 1 240px;
+        height: 160px;
+    }
+    
+    .progress-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 15px;
+    }
+    
+    .progress-container span {
+        width: auto;
+        text-align: left;
+        padding-right: 0;
+    }
+    
+    .progress {
+        width: 100%;
+    }
+}
+
+/* Dispositivos pequenos (telefones, 576px e acima) */
+@media (max-width: 767.98px) {
+    body {
+        background-size: 350px 197px;
+        animation: moveBackgroundY 60s linear infinite;
+    }
+    
+    .container {
+        margin: 20px 15px;
+        border-radius: 18px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .curso-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 120px;
+    }
+    
+    .cursos-grid {
+        gap: 15px;
+    }
+    
+    .info-item {
+        min-height: auto;
+    }
+    
+    .progress-container {
+        padding: 12px 15px;
+    }
+    
+    .progress-container i {
+        font-size: 1.8em;
+        min-width: 40px;
+    }
+    
+    .progress-bar {
+        height: 22px;
+        font-size: 0.8em;
+    }
+}
+
+/* Dispositivos muito pequenos (telefones menores que 576px) */
+@media (max-width: 575.98px) {
+    .container {
+        margin: 15px 10px;
+        padding: 25px 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .header .lead {
+        font-size: 1rem;
+    }
+    
+    .photo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .info-item, .curso-card {
+        padding: 0.8em 1em;
+    }
+    
+    .progress-container span {
+        font-size: 1rem;
+    }
+}
+
+/* Ajustes para telas muito grandes */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+/* Ajustes de orientação paisagem para dispositivos móveis */
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .header {
+        margin-bottom: 20px;
+    }
+    
+    .photo {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Correção para IE11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .progress-bar {
+        display: block;
+    }
+}

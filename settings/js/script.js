@@ -463,3 +463,4 @@ class PageInitializer {
 document.addEventListener('DOMContentLoaded', () => {
   new PageInitializer();
 });
+
