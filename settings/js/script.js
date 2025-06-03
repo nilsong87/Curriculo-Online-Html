@@ -1,7 +1,7 @@
 /**
  * Importações de bibliotecas externas necessárias para o funcionamento do projeto
  */
-import $ from 'jquery';
+import $ from './node_modules/jquery/dist/jquery.min.js';
 import Popper from 'popper.js';
 import 'bootstrap';
 
