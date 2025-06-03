@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "@vercel/blob": "^1.0.2",
     "@vercel/kv": "^3.0.0",
     "cors": "^2.8.5",
