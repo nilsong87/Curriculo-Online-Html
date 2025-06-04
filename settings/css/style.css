@@ -456,15 +456,12 @@ a:hover {
 /* Cores personalizadas com gradientes melhorados */
 .progress-container:nth-child(2) .progress-bar { 
   background: linear-gradient(135deg, #e34c26, #f06529, #ff8c66);
-  --glow-intensity: 0.7;
 }
 .progress-container:nth-child(3) .progress-bar { 
   background: linear-gradient(135deg, #1572b6, #3399ff, #66c2ff);
 }
 .progress-container:nth-child(4) .progress-bar { 
   background: linear-gradient(135deg, #f7df1e, #ffeb3b, #fff176);
-  color: #ffffff;
-  text-shadow: 0 1px 2px rgba(255,255,255,0.5);
 }
 .progress-container:nth-child(5) .progress-bar { 
   background: linear-gradient(135deg, #7952b3, #9370db, #b399ff);
@@ -474,8 +471,6 @@ a:hover {
 }
 .progress-container:nth-child(7) .progress-bar { 
   background: linear-gradient(135deg, #39ff27, #66ff59, #94ff8a);
-  color: #ffffff;
-  text-shadow: 0 1px 2px rgba(255,255,255,0.5);
 }
 .progress-container:nth-child(8) .progress-bar { 
   background: linear-gradient(135deg, #00758f, #00a4c5, #00d4ff);
