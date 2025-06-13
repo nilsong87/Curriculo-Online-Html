@@ -24,11 +24,12 @@
 body {
     font-family: 'Nova Square', Arial, sans-serif;
     background-image: url(/settings/images/tema.gif);
+    background-repeat: repeat;
     min-height: 100vh;
     color: var(--text-color);
     overflow-x: hidden;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: auto;
 }
 
 /* =========================
