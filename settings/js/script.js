@@ -52,14 +52,28 @@ document.addEventListener("DOMContentLoaded", incrementVisitorCount);
 // ==========================
 // Rolagem suave para âncoras internas
 // ==========================
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+document.addEventListener("DOMContentLoaded", function () {
+    const fadeEls = document.querySelectorAll('.fade-in-up');
+    function checkFadeIn() {
+        fadeEls.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 60) {
+                el.classList.add('visible');
             }
+        });
+    }
+    checkFadeIn();
+    window.addEventListener('scroll', checkFadeIn);
+});
+
+// ==========================
+// Efeito de destaque ao clicar em competências técnicas/idiomas
+// ==========================
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.competencia-item').forEach(item => {
+        item.addEventListener('click', function () {
+            item.classList.add('clicked');
+            setTimeout(() => item.classList.remove('clicked'), 350);
         });
     });
 });

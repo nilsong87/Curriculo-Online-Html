@@ -1,8 +1,9 @@
-/* ...seu CSS existente... */
 
 /* Responsividade para tablets */
 @media (max-width: 900px) {
-
+    .display-4 {
+        margin-top: 50px;
+    }
     .container {
         padding: 1em !important;
         margin-top: 15px;
@@ -17,8 +18,8 @@
         gap: 14px;
     }
     .competencia-item {
-        width: 90px;
-        height: 90px;
+        width: 120px;
+        height: 100px;
         font-size: 0.95em;
     }
 }
@@ -38,8 +39,8 @@
         gap: 10px;
     }
     .competencia-item {
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 90px;
         font-size: 0.85em;
     }
     #visitor-counter, #acessibilidade-bar {
@@ -55,12 +56,12 @@
         padding: 0.2em !important;
     }
     .competencias-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: reapeat(2,1fr);
         gap: 6px;
     }
     .competencia-item {
-        width: 100%;
-        height: 50px;
+        width: 100px;
+        height: 60px;
         font-size: 0.8em;
     }
 }
@@ -144,7 +145,7 @@
     /* Grid responsivo para competências e idiomas */
     .competencias-grid {
         display: grid !important;
-        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)) !important;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)) !important;
         gap: 12px !important;
         margin-bottom: 1em !important;
         page-break-inside: avoid !important;
@@ -153,7 +154,7 @@
         width: 100% !important;
         min-width: 60px !important;
         height: 70px !important;
-        font-size: 0.70em !important;
+        font-size: 0.60em !important;
         background: #f7faff !important;
         border-radius: 10px !important;
         border: 1.5px solid #2e6cf6 !important;
@@ -216,6 +217,7 @@
         text-decoration: underline !important;
         word-break: break-all !important;
     }
+
     
     /* Remove hover e efeitos de transição */
     * {
