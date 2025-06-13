@@ -251,126 +251,221 @@
             </div>
         </section>
 
-        <!-- Seção de Competências Técnicas com barras de progresso -->
+        <!-- Seção de Competências Técnicas -->
         <section class="section mb-5">
             <h2 class="section-title">Competências Técnicas</h2>
-
-            <div class="progress-container">
-                <i class="fab fa-html5" style="color: red;"></i>
-                <span><strong>HTML5</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 78%">Avançado</div>
+            <!-- Exemplo de grid de competências técnicas usando SVGs para impressão e tela -->
+            <div class="competencias-grid">
+                <!-- HTML5 -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <path fill="#e44d26" d="M9 3l3 34 12 4 12-4 3-34z" />
+                            <path fill="#f16529" d="M24 39l9.7-2.7 2.6-29.3H24z" />
+                            <path fill="#ebebeb" d="M24 20.5h-5.2l-.3-3.2H24V14h-8.5l.1 1.2 1 11.2H24z" />
+                            <path fill="#fff"
+                                d="M24 20.5v3.3h4.7l-.4 4.2-4.3 1.2v3.4l7.1-2 1-11.2.1-1.2H24v3.3h4.9l-.2 2.2z" />
+                        </svg>
+                    </span>
+                    <span>HTML5</span>
+                </div>
+                <!-- CSS3 -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <path fill="#264de4" d="M9 3l3 34 12 4 12-4 3-34z" />
+                            <path fill="#2965f1" d="M24 39l9.7-2.7 2.6-29.3H24z" />
+                            <path fill="#ebebeb" d="M24 20.5h-5.2l-.3-3.2H24V14h-8.5l.1 1.2 1 11.2H24z" />
+                            <path fill="#fff"
+                                d="M24 20.5v3.3h4.7l-.4 4.2-4.3 1.2v3.4l7.1-2 1-11.2.1-1.2H24v3.3h4.9l-.2 2.2z" />
+                        </svg>
+                    </span>
+                    <span>CSS3</span>
+                </div>
+                <!-- JavaScript -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <rect width="48" height="48" rx="8" fill="#f7df1e" />
+                            <path
+                                d="M19 34.5l-2.2-1.3c.4-.7.7-1.3 1.4-2.3.7-1 1.2-1.7 2.2-2.7 1.2-1.2 2.2-2.1 3.7-2.1 1.7 0 2.7.8 2.7 2.2 0 1.2-.7 1.8-2.2 2.7l-1.2.7c-.7.4-1.2.7-1.2 1.3v.2h5.2v2.1H19z"
+                                fill="#000" />
+                        </svg>
+                    </span>
+                    <span>JavaScript</span>
+                </div>
+                <!-- Bootstrap -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <rect width="48" height="48" rx="10" fill="#7952b3" />
+                            <text x="24" y="31" text-anchor="middle" font-size="22" font-family="Arial" fill="#fff"
+                                font-weight="bold">B</text>
+                        </svg>
+                    </span>
+                    <span>Bootstrap</span>
+                </div>
+                <!-- PHP -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <ellipse cx="24" cy="24" rx="22" ry="12" fill="#777bb4" />
+                            <text x="24" y="29" text-anchor="middle" font-size="14" font-family="Arial" fill="#fff"
+                                font-weight="bold">PHP</text>
+                        </svg>
+                    </span>
+                    <span>PHP</span>
+                </div>
+                <!-- SVG simplificado do logo do Laravel -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <polygon points="8,36 24,44 40,36 40,12 24,4 8,12" fill="#fff" />
+                            <polyline points="8,36 8,12 24,4 40,12 40,36 24,44 8,36" fill="none" stroke="#ff2d20"
+                                stroke-width="3" />
+                            <polyline points="8,12 24,20 40,12" fill="none" stroke="#ff2d20" stroke-width="3" />
+                            <polyline points="24,20 24,44" fill="none" stroke="#ff2d20" stroke-width="3" />
+                        </svg>
+                    </span>
+                    <span>Laravel</span>
+                </div>
+                <!-- Node.js -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <polygon points="24,4 44,14 44,34 24,44 4,34 4,14" fill="#8cc84b" />
+                            <text x="24" y="30" text-anchor="middle" font-size="14" font-family="Arial" fill="#fff"
+                                font-weight="bold">Node</text>
+                        </svg>
+                    </span>
+                    <span>Node.js</span>
+                </div>
+                <!-- MySQL -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <ellipse cx="24" cy="24" rx="20" ry="10" fill="#00758f" />
+                            <text x="24" y="29" text-anchor="middle" font-size="13" font-family="Arial" fill="#fff"
+                                font-weight="bold">MySQL</text>
+                        </svg>
+                    </span>
+                    <span>MySQL</span>
+                </div>
+                <!-- MongoDB -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <ellipse cx="24" cy="24" rx="20" ry="10" fill="#47A248" />
+                            <text x="24" y="29" text-anchor="middle" font-size="13" font-family="Arial" fill="#fff"
+                                font-weight="bold">Mongo</text>
+                        </svg>
+                    </span>
+                    <span>MongoDB</span>
+                </div>
+                <!-- Figma -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <circle cx="16" cy="16" r="8" fill="#f24e1e" />
+                            <circle cx="32" cy="16" r="8" fill="#a259ff" />
+                            <circle cx="16" cy="32" r="8" fill="#0acf83" />
+                            <circle cx="32" cy="32" r="8" fill="#1abcfe" />
+                            <circle cx="24" cy="24" r="8" fill="#ff7262" />
+                        </svg>
+                    </span>
+                    <span>Figma</span>
+                </div>
+                <!-- GitHub -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <circle cx="24" cy="24" r="22" fill="#181717" />
+                            <path
+                                d="M24 34c-6 0-10-4-10-8.9 0-2 1-3.7 2.6-5-0.3-0.7-1.1-3.2 0.2-6.6 0 0 2-0.6 6.6 2.5 1.9-0.5 4-0.7 6-0.7s4.1 0.2 6 0.7c4.6-3.1 6.6-2.5 6.6-2.5 1.3 3.4 0.5 5.9 0.2 6.6 1.6 1.3 2.6 3 2.6 5C34 30 30 34 24 34z"
+                                fill="#fff" />
+                        </svg>
+                    </span>
+                    <span>GitHub</span>
+                </div>
+                <!-- Copilot -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <circle cx="24" cy="24" r="22" fill="#00a4ef" />
+                            <circle cx="18" cy="22" r="5" fill="#fff" />
+                            <circle cx="30" cy="22" r="5" fill="#fff" />
+                            <ellipse cx="24" cy="30" rx="8" ry="4" fill="#fff" />
+                            <ellipse cx="24" cy="30" rx="5" ry="2.5" fill="#00a4ef" />
+                        </svg>
+                    </span>
+                    <span>Copilot</span>
+                </div>
+                <!-- Vercel -->
+                <div class="competencia-item">
+                    <span class="tecnica-svg">
+                        <svg viewBox="0 0 48 48" width="36" height="36">
+                            <polygon points="24,8 44,40 4,40" fill="#000" />
+                        </svg>
+                    </span>
+                    <span>Vercel</span>
                 </div>
             </div>
-
-            <div class="progress-container">
-                <i class="fab fa-css3-alt" style="color: blue;"></i>
-                <span><strong>CSS3</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 76%">Avançado</div>
-                </div>
-            </div>
-
-            <div class="progress-container">
-                <i class="fab fa-js" style="color: #f7df1e;"></i>
-                <span><strong>JavaScript</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 70%">Avançado</div>
-                </div>
-            </div>
-            <div class="progress-container">
-                <i class="fab fa-bootstrap" style="color: #7952b3;"></i>
-                <span><strong>Bootstrap</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 65%">Avançado</div>
-                </div>
-            </div>
-            <div class="progress-container">
-                <i class="fab fa-php" style="color: #777bb4;"></i>
-                <span><strong>PHP / Laravel</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 70%">Intermediário</div>
-                </div>
-            </div>
-            <div class="progress-container">
-                <i class="fab fa-node" style="color: #39ff27;"></i>
-                <span><strong>Node.js</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 60%">Intermediário</div>
-                </div>
-            </div>
-            <div class="progress-container">
-                <i class="fas fa-database" style="color: #00758f;"></i>
-                <span><strong>MySQL</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 65%">Intermediário</div>
-                </div>
-            </div>
-            <div class="progress-container">
-                <i class="fas fa-database" style="color: #47A248;"></i>
-                <span><strong>MongoDB</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 50%">Intermediário
-                    </div>
-                </div>
-            </div>
-            <div class="progress-container">
-                <i class="fas fa-cloud" style="color: #000000;"></i>
-                <span><strong>Vercel</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 58%">Intermediário</div>
-                </div>
-            </div>
-            <div class="progress-container">
-                <i class="fab fa-figma" style="color: #f24e1e;"></i>
-                <span><strong>Figma</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 75%">Avançado</div>
-                </div>
-            </div>
-            <div class="progress-container">
-                <i class="fab fa-github" style="color: #181717;"></i>
-                <span><strong>GitHub</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 80%">Avançado</div>
-                </div>
-            </div>
-            <div class="progress-container">
-                <i class="fas fa-robot" style="color: #00a4ef;"></i>
-                <span><strong>GitHub Copilot</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 75%">Intermediário/Avançado
-                    </div>
-                </div>
-            </div>
-
         </section>
 
         <!-- Seção de Idiomas -->
         <section class="section mb-5">
             <h2 class="section-title">Idiomas</h2>
-
-            <div class="progress-container">
-                <i class="flag-icon flag-icon-br"></i>
-                <span><strong>Português</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 100%">Fluente</div>
+            <!-- Exemplo de uso de SVGs para bandeiras na seção de idiomas -->
+            <div class="competencias-grid">
+                <div class="competencia-item">
+                    <!-- Brasil -->
+                    <span class="idioma-bandeira">
+                        <svg width="36" height="24" viewBox="0 0 36 24">
+                            <rect width="36" height="24" fill="#3EAE2A" />
+                            <polygon points="18,4 32,12 18,20 4,12" fill="#FFCC29" />
+                            <circle cx="18" cy="12" r="6" fill="#2A4D9B" />
+                            <path d="M13 13 Q18 10 23 13" stroke="#fff" stroke-width="1.2" fill="none" />
+                        </svg>
+                    </span>
+                    <span>Português</span>
                 </div>
-            </div>
-
-            <div class="progress-container">
-                <i class="flag-icon flag-icon-us"></i>
-                <span><strong>Inglês</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 60%">Intermediário</div>
+                <div class="competencia-item">
+                    <!-- EUA -->
+                    <span class="idioma-bandeira">
+                        <svg width="36" height="24" viewBox="0 0 36 24">
+                            <rect width="36" height="24" fill="#fff" />
+                            <g>
+                                <rect y="0" width="36" height="3" fill="#B22234" />
+                                <rect y="6" width="36" height="3" fill="#B22234" />
+                                <rect y="12" width="36" height="3" fill="#B22234" />
+                                <rect y="18" width="36" height="3" fill="#B22234" />
+                            </g>
+                            <rect width="14" height="12" fill="#3C3B6E" />
+                            <!-- Estrelas simplificadas -->
+                            <g fill="#fff">
+                                <circle cx="2" cy="2" r="1" />
+                                <circle cx="6" cy="2" r="1" />
+                                <circle cx="10" cy="2" r="1" />
+                                <circle cx="2" cy="6" r="1" />
+                                <circle cx="6" cy="6" r="1" />
+                                <circle cx="10" cy="6" r="1" />
+                                <circle cx="2" cy="10" r="1" />
+                                <circle cx="6" cy="10" r="1" />
+                                <circle cx="10" cy="10" r="1" />
+                            </g>
+                        </svg>
+                    </span>
+                    <span>Inglês</span>
                 </div>
-            </div>
-
-            <div class="progress-container">
-                <i class="flag-icon flag-icon-es"></i>
-                <span><strong>Espanhol</strong></span>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 60%">Intermediário</div>
+                <div class="competencia-item">
+                    <!-- Espanha -->
+                    <span class="idioma-bandeira">
+                        <svg width="36" height="24" viewBox="0 0 36 24">
+                            <rect width="36" height="24" fill="#AA151B" />
+                            <rect y="6" width="36" height="12" fill="#F1BF00" />
+                        </svg>
+                    </span>
+                    <span>Espanhol</span>
                 </div>
             </div>
         </section>
@@ -391,56 +486,14 @@
     </div>
 
     <!-- Scripts JavaScript -->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-
-    <script>
-        // Contador de visitantes
-        const counterElement = document.getElementById('counter');
-        const API_URL = 'https://curriculo-online-html.vercel.app/api/visitors';
-
-        async function fetchVisitorCount() {
-            try {
-                const response = await fetch(API_URL);
-                const data = await response.json();
-                counterElement.textContent = data.count;
-            } catch (error) {
-                console.error('Erro ao buscar contagem:', error);
-            }
-        }
-
-        async function incrementVisitorCount() {
-            try {
-                await fetch(API_URL, { method: 'POST' });
-                fetchVisitorCount();
-            } catch (error) {
-                console.error('Erro ao incrementar contagem:', error);
-            }
-        }
-
-        incrementVisitorCount();
-
-        // Loader
-        window.addEventListener("load", function () {
-            const loader = document.getElementById("loader");
-            if (loader) {
-                loader.classList.add("fade-out");
-                setTimeout(() => loader.style.display = "none", 600);
-            }
-        });
-
-        // Acessibilidade: Alto contraste e fonte
-        function toggleContraste() {
-            document.body.classList.toggle('alto-contraste');
-        }
-        function alterarFonte(delta) {
-            const html = document.documentElement;
-            let size = parseInt(window.getComputedStyle(html).fontSize);
-            size = Math.max(12, Math.min(24, size + delta));
-            html.style.fontSize = size + "px";
-        }
-    </script>
+    <!-- Seu script -->
+    <script src="/settings/js/script.js"></script>
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
@@ -451,8 +504,6 @@
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
-    <script type="module" src="/settings/js/script.js"></script>
-
 </body>
 
 </html>
