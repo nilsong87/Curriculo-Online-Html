@@ -14,15 +14,25 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="/settings/css/test.css">
+    <link rel="stylesheet" href="/settings/css/style.css">
     <link rel="stylesheet" href="/settings/css/impressao.css">
 
     <title>Currículo Front-End - Nilson Gomes</title>
 </head>
 
 <body>
-    <!-- Contador de visitantes -->
-    <div id="visitor-counter" class="text-right pr-3 pt-2 small text-muted">Visitantes: <span id="counter">0</span>
+
+    <div class="top-bar-wrap">
+        <!-- Acessibilidade -->
+        <div id="acessibilidade-bar" style="display:flex;gap:10px;align-items:center;">
+            <button onclick="toggleContraste()" aria-label="Ativar/desativar alto contraste" tabindex="0">Alto
+                Contraste</button>
+            <button onclick="alterarFonte(1)" aria-label="Aumentar fonte" tabindex="0">A+</button>
+            <button onclick="alterarFonte(-1)" aria-label="Diminuir fonte" tabindex="0">A-</button>
+        </div>
+        <!-- Contador de visitantes -->
+        <div id="visitor-counter" class="text-right pr-3 pt-2 small text-muted">Visitantes: <span id="counter">0</span>
+        </div>
     </div>
 
     <!-- Loader de carregamento -->
@@ -76,7 +86,7 @@
                     <a href="https://wa.me/55719999385205" target="_blank" rel="noopener">
                         (+55) 71 99938 5205
                     </a>
-                </li>                
+                </li>
                 <li><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/nilsong87"
                         target="_blank">github.com/nilsong87</a></li>
                 <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a
@@ -119,7 +129,8 @@
                         de
                         Textos</a></li>
                 <li><i class="fas fa-globe"></i> <strong>Website:</strong> <a
-                        href="https://meu-blog-guze0l49o-nilsong87s-projects.vercel.app" target="_blank">Meu Blog</a></li>
+                        href="https://meu-blog-guze0l49o-nilsong87s-projects.vercel.app" target="_blank">Meu Blog</a>
+                </li>
                 <li><i class="fas fa-globe"></i> <strong>Website:</strong> <a
                         href="https://nilsong87.github.io/Meu-Garoto/" target="_blank">Ajudando na
                         Alfabetização!</a>
@@ -142,11 +153,13 @@
         <section class="section mb-4" fade-in-up>
             <h2 class="section-title">Competências Pessoais</h2>
             <ul class="list-unstyled">
-                <div class="info-item mb-3"><li>Responsabilidade</li>
-                <li>Organização</li>
-                <li>Espírito de Equipe</li>
-                <li>Pontualidade</li>
-                <li>Dedicação</li></div>
+                <div class="info-item mb-3">
+                    <li>Responsabilidade</li>
+                    <li>Organização</li>
+                    <li>Espírito de Equipe</li>
+                    <li>Pontualidade</li>
+                    <li>Dedicação</li>
+                </div>
             </ul>
         </section>
 
@@ -483,13 +496,6 @@
     </div>
     <!-- Fim do container principal -->
 
-    <!-- Acessibilidade -->
-    <div id="acessibilidade-bar" style="display:flex;gap:10px;align-items:center;margin-bottom:10px;">
-        <button onclick="toggleContraste()" aria-label="Ativar/desativar alto contraste" tabindex="0">Alto
-            Contraste</button>
-        <button onclick="alterarFonte(1)" aria-label="Aumentar fonte" tabindex="0">A+</button>
-        <button onclick="alterarFonte(-1)" aria-label="Diminuir fonte" tabindex="0">A-</button>
-    </div>
 
     <!-- Scripts JavaScript -->
     <!-- jQuery -->
