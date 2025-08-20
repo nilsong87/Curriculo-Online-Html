@@ -1,21 +1,15 @@
 {
-  "name": "meu-curriculo",
+  "name": "curriculo-nilson-gomes",
   "version": "1.0.0",
-  "main": "server.js",
+  "description": "Currículo interativo de Nilson Gomes",
   "scripts": {
-    "start": "node server.js"
+    "dev": "vercel dev",
+    "build": "echo 'Build completo'"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "@vercel/blob": "^1.0.2",
-    "@vercel/kv": "^3.0.0",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "jquery": "^3.7.1",
-    "mongodb": "^5.7.0"
+    "mongodb": "^4.17.1"
+  },
+  "devDependencies": {
+    "vercel": "^28.16.0"
   }
 }
